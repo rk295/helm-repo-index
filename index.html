@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Helm Chart repo index</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
+    <!-- Yaml loader -->
+    <script src="js/esprima.js"></script>
+    <script src="js/js-yaml.min.js"></script>
+
+    <!-- templating engnine -->
+    <script src="js/mustache.min.js"></script>
+
+    <!-- Boot strap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+
+    <h1>Helm Charts</h1>
+    <p>What follows is a list of all the charts in our repo. The <a href="index.yaml"><tt>index.yaml</tt></a> file was created at <span id="generatedAt"></span> with API Version <span id="apiVersion"></span>.
+
+    <div id="target"></div>
+
+    </div>
+</body>
+</html>
