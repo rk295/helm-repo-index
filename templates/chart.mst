@@ -1,7 +1,9 @@
-<div id="{{name}}"
+{{#each entries}}
+
+<div id="{{@key}}"
 <div class="row">
-    <a href="#{{name}}"><h2 id="{{name}}">{{name}}</h2></a>
-    {{#versions}}
+    <a href="#{{@key}}"><h2 id="{{@key}}">{{@key}}</h2></a>
+    {{#this}}
     <div class="col-xs-4">
         <a name="{{name}}-{{version}}"></a>
         <table class="table table-striped table-bordered small">
@@ -52,7 +54,9 @@
             <!-- <tr><th>Digest</th><td>{{digest}}</td></tr> -->
         </table>
     </div><!-- end col-4 -->
-    {{/versions}}
+    {{/this}}
 </div><!-- end row -->
 <a href="index.html">Back to top.</a>
 </div>
+
+{{/each}}

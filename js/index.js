@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+
     $.get('index.yaml', process_yaml);
 });
 
@@ -13,11 +13,6 @@ function process_yaml(data, status){
         $('#generatedAt').html(doc.generated);
         $('#apiVersion').html(doc.apiVersion);
 
-        chartList = doc.entries;
-
-        for (var key in chartList) {
-            var chartDetails = { name:key, versions: chartList[key] };
-            $('#target').append(compiledTemplate(chartDetails));
-        }
+        $('#target').append(compiledTemplate(doc));
     });
 }
