@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     $.get('index.yaml', process_yaml);
 });
 

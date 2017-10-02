@@ -4,12 +4,51 @@
     {{#versions}}
     <div class="col-xs-4">
         <a name="{{name}}-{{version}}"></a>
-        <table class="table table-striped table-bordered">
-            <tr><th>Version</th><td><b><a href="#{{name}}-{{version}}">{{version}}</a></b></td></tr>
-            <tr><th>API Version</th><td>{{apiVersion}}</td></tr>
+        <table class="table table-striped table-bordered small">
+            {{#icon}}
+            <tr><th colspan="2" style="text-align: center;"><img src="{{.}}" class="img-rounded" width="100px"></th></tr>
+            {{/icon}}
+            {{#home}}<tr><th>Home</th><td><a href="{{.}}" class="small">{{.}}</a></td></tr>{{/home}}
+            {{#appVersion}}<tr><th>App version</th><td>{{.}}</td></tr>{{/appVersion}}
+            <tr><th>Chart version</th><td><b><a href="#{{name}}-{{version}}">{{version}}</a></b></td></tr>
+            {{#apiVersion}}<tr><th>API Version</th><td>{{.}}</td></tr>{{/apiVersion}}
             <tr><th>Created Date</th><td>{{created}}</td></tr>
             <tr><th>Description</th><td>{{description}}</td></tr>
-            <tr><th>Download</th><td>{{#urls}}<a href="{{.}}">click</a></br>{{/urls}}</td></tr>
+            <tr><th>Download</th><td>{{#urls}}<a href="{{.}}">Link</a></br>{{/urls}}</td></tr>
+            <tr><th>Digest</th><td>{{truncate digest 15}}</td></tr>
+            {{#if sources}}
+            <tr>
+                <th>Sources</th>
+                <td>
+                    <ul>
+                        {{#sources}}
+                        <li><a href="{{.}}" class="small">{{.}}</a></li>
+                        {{/sources}}
+                    </ul>
+                </td>
+            </tr>
+            {{/if}}
+            {{#if keywords}}
+            <tr><th>Keywords</th>
+                <td>
+                {{#keywords}}
+                    <span class="label label-success">{{.}}</span>&nbsp;
+                {{/keywords}}
+                </td>
+            </tr>
+            {{/if}}
+            {{#if maintainers}}
+            <tr>
+                <th>Maintainers</th>
+                <td>
+                    <ul>
+                        {{#maintainers}}
+                        <li><a href="mailto:{{email}}">{{name}}</a></li>
+                        {{/maintainers}}
+                    </ul>
+                </td>
+            </tr>
+            {{/if}}
             <!-- <tr><th>Digest</th><td>{{digest}}</td></tr> -->
         </table>
     </div><!-- end col-4 -->
