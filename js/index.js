@@ -14,6 +14,7 @@ function process_yaml(data, status){
     $.get('templates/chart.mst', function(template) {
 
         var doc = jsyaml.load(data);
+        var compiledTemplate = Handlebars.compile(template);
 
         $('#generatedAt').html(doc.generated);
         $('#apiVersion').html(doc.apiVersion);
@@ -24,8 +25,7 @@ function process_yaml(data, status){
 
             var chartDetails = { name:key, versions: chartList[key] };
 
-            var rendered = Mustache.render(template, chartDetails);
-            $('#target').append(rendered);
+            $('#target').append(compiledTemplate(chartDetails));
             console.log('Found chart: ' + key + ' with ' + chartList[key].length + ' version(s)');
 
             console.log(chartList[key]);
